@@ -296,7 +296,7 @@ export default function EDISystemPage() {
               <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/50 text-sm">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@bluecare.in</span>
+                  <span>bluecare@bluecare.in</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />

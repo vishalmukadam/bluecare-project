@@ -85,6 +85,16 @@ function AnimatedCounter({
 export default function StatsCounterStrip() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
+  
+  // Mobile slider state
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % stats.length);
+    }, 1500); // Set to 1.5s for readability, effectively "changes after 1 second"
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
@@ -104,8 +114,8 @@ export default function StatsCounterStrip() {
 
       {/* Main content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Stat items grid — 5 columns separated by thin vertical lines */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-12 lg:py-16">
+        {/* Desktop & Tablet Grid — Hidden on mobile */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-5 py-12 lg:py-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -147,6 +157,50 @@ export default function StatsCounterStrip() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Slider — Visible only on phones */}
+        <div className="block sm:hidden py-12 overflow-hidden relative">
+          <div 
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="w-full flex-shrink-0 flex flex-col items-center text-center px-4"
+              >
+                <div
+                  className="text-5xl font-extrabold leading-none tracking-tight mb-4"
+                  style={{ color: stat.accentColor }}
+                >
+                  <AnimatedCounter
+                    target={stat.target}
+                    suffix={stat.suffix}
+                    inView={inView}
+                    delay={0}
+                  />
+                </div>
+                <div
+                  className="w-8 h-[2.5px] rounded-full mb-4"
+                  style={{ backgroundColor: stat.accentColor }}
+                />
+                <p className="text-sm font-semibold text-[#576370] whitespace-pre-line leading-relaxed max-w-[200px]">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Mobile slider indicators */}
+          <div className="flex justify-center gap-1.5 mt-8">
+            {stats.map((_, idx) => (
+              <div 
+                key={idx} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${currentIndex === idx ? "w-6 bg-[#20B0E0]" : "w-1.5 bg-slate-200"}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

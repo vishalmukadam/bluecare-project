@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useInView, useMotionValue, animate } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { MessageCircle, ArrowRight, Shield, Clock, Award, Droplets, CheckCircle, Star, BadgeCheck, ClipboardList, Zap } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { MessageCircle, ArrowRight, Droplets, ClipboardList } from "lucide-react";
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -13,43 +13,7 @@ const fadeUpVariants = {
   }),
 };
 
-const trustBadges = [
-  { icon: Shield, text: "ISO 9001:2015" },
-  { icon: Clock, text: "24/7 Support" },
-  { icon: Award, text: "100+ Projects" },
-  { icon: BadgeCheck, text: "GMP Certified" },
-];
 
-const statsData = [
-  { icon: CheckCircle, value: 100, suffix: "+", label: "Projects Completed" },
-  { icon: Star, value: 98, suffix: "%", label: "Client Satisfaction" },
-  { icon: Clock, value: 24, suffix: "/7", label: "Expert Support" },
-];
-
-function AnimatedStatCounter({ target, suffix }: { target: number; suffix: string }) {
-  const [displayValue, setDisplayValue] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const motionVal = useMotionValue(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    const controls = animate(motionVal, target, {
-      duration: 2,
-      ease: [0.25, 0.1, 0.25, 1],
-      onUpdate: (v) => setDisplayValue(Math.floor(v)),
-    });
-
-    return () => controls.stop();
-  }, [isInView, motionVal, target]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {displayValue}{suffix}
-    </span>
-  );
-}
 
 export default function CTASection() {
   const ref = useRef(null);
@@ -135,27 +99,7 @@ export default function CTASection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {/* Animated Statistics Counter Row */}
-          <motion.div
-            custom={-0.5}
-            variants={fadeUpVariants}
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-10"
-          >
-            {statsData.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2 bg-white/10 border border-white/15 rounded-xl px-5 py-3 backdrop-blur-sm"
-              >
-                <stat.icon className="w-5 h-5 text-white/90 flex-shrink-0" />
-                <div className="text-left">
-                  <span className="text-white font-bold text-lg">
-                    <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
-                  </span>
-                  <span className="text-white/70 text-xs ml-1.5">{stat.label}</span>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+
 
           <motion.div
             custom={0}
@@ -216,58 +160,7 @@ export default function CTASection() {
             </button>
           </motion.div>
 
-          {/* Glassmorphism CTA Cards */}
-          <motion.div
-            custom={3.5}
-            variants={fadeUpVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto"
-          >
-            <div className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-sm text-left hover:bg-white/15 transition-colors duration-200 group">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-colors">
-                  <ClipboardList className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">Free Plant Audit</h4>
-                  <p className="text-white/70 text-xs leading-relaxed">
-                    Get a complimentary assessment of your water treatment needs
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-sm text-left hover:bg-white/15 transition-colors duration-200 group">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-colors">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm mb-1">Rapid Response</h4>
-                  <p className="text-white/70 text-xs leading-relaxed">
-                    Emergency support within 4 hours for critical plant issues
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Trust Badges */}
-          <motion.div
-            custom={4}
-            variants={fadeUpVariants}
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6"
-          >
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.text}
-                className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-200 cursor-default"
-              >
-                <badge.icon className="w-5 h-5 text-white" />
-                <span className="text-white text-sm font-medium">
-                  {badge.text}
-                </span>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
 

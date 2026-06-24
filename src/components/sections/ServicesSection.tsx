@@ -377,18 +377,6 @@ function ServiceCard({ service }: { service: Service }) {
           />
         </div>
 
-        {/* Stat badge overlay on the photo (bottom-left) */}
-        <div className="absolute bottom-4 left-4 px-3 py-2 rounded-lg bg-white/95 backdrop-blur-sm shadow-md text-center">
-          <div
-            className="text-xl font-bold leading-none"
-            style={{ color: service.color }}
-          >
-            {service.stat}
-          </div>
-          <div className="text-[10px] text-[#3C4D57] leading-tight mt-1 whitespace-nowrap">
-            {service.statLabel}
-          </div>
-        </div>
 
         {/* Number badge overlay (top-right of photo) */}
         <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm shadow-md flex items-center justify-center">

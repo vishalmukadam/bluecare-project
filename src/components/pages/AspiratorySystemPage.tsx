@@ -271,11 +271,6 @@ export default function AspiratorySystemPage() {
                 {/* Gradient overlay on image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D5C]/30 to-transparent" />
               </div>
-              {/* Floating stat card */}
-              <div className="absolute -bottom-6 -right-4 md:right-6 bg-white rounded-xl shadow-xl p-4 border border-[#E2E8F0]/60">
-                <p className="text-sm text-[#3C4D57]/60">Oxygen Transfer Efficiency</p>
-                <p className="text-2xl font-bold text-[#142A33]">Up to 95%+</p>
-              </div>
               {/* Decorative accent */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#20B0E0]/20 rounded-2xl -z-10" />
             </motion.div>
@@ -738,7 +733,7 @@ export default function AspiratorySystemPage() {
               <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/50 text-sm">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@bluecare.in</span>
+                  <span>bluecare@bluecare.in</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />

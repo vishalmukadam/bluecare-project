@@ -177,18 +177,6 @@ export default function FiltrationPlantPage() {
                   className="w-full h-auto object-cover"
                 />
               </div>
-              {/* Floating stat card */}
-              <div className="absolute -bottom-6 -right-4 md:right-6 bg-white rounded-xl shadow-xl p-4 border border-[#E2E8F0]/60">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#20B0E0] to-[#0E84B8] flex items-center justify-center">
-                    <Filter className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-[#142A33]">500+</p>
-                    <p className="text-xs text-[#3C4D57]">Systems Installed</p>
-                  </div>
-                </div>
-              </div>
               {/* Decorative accent */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#20B0E0]/20 rounded-2xl -z-10" />
             </motion.div>
@@ -335,7 +323,7 @@ export default function FiltrationPlantPage() {
               <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/50 text-sm">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@bluecare.in</span>
+                  <span>bluecare@bluecare.in</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />

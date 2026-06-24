@@ -37,23 +37,9 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    detail: "info@bluecare.in",
+    detail: "bluecare@bluecare.in",
     subDetail: "We respond within 24 hours",
     accentColor: "#8CC63F",
-  },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    detail: "Industrial Area, India",
-    subDetail: "By appointment only",
-    accentColor: "#E0B040",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    detail: "Mon - Sat: 9:00 AM - 6:00 PM",
-    subDetail: "IST (UTC+5:30)",
-    accentColor: "#0E84B8",
   },
 ];
 

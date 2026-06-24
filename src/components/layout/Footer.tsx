@@ -267,11 +267,11 @@ export default function Footer() {
 
             <div className="space-y-3">
               <a
-                href="mailto:info@bluecare.in"
+                href="mailto:bluecare@bluecare.in"
                 className="flex items-center gap-3 text-[#3C4D57] hover:text-[#0E84B8] transition-colors text-sm group"
               >
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                info@bluecare.in
+                bluecare@bluecare.in
               </a>
               <a
                 href="tel:+919987088708"
