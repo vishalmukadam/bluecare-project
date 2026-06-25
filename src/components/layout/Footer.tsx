@@ -16,6 +16,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -244,14 +245,16 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/bluecare-logo.png"
-                alt="BlueCare Systems"
-                width={160}
-                height={45}
-                className="h-10 w-auto"
-                unoptimized
-              />
+              <Link href="/">
+                <Image
+                  src="/bluecare-logo.png"
+                  alt="BlueCare Systems"
+                  width={240}
+                  height={68}
+                  className="h-16 w-auto"
+                  unoptimized
+                />
+              </Link>
             </div>
 
             {/* 7. Decorative water molecule illustration */}

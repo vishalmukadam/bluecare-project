@@ -29,14 +29,9 @@ const fadeInUp = {
   }),
 };
 
-/* ─────────────────────── Stats ─────────────────────── */
 
-const stats = [
-  { value: "200+", label: "EDI Systems Installed", icon: <Zap className="w-5 h-5" />, color: "#20B0E0" },
-  { value: "18.2", label: "MΩ·cm Water Quality", icon: <Droplets className="w-5 h-5" />, color: "#8CC63F" },
-  { value: "0", label: "Chemical Regeneration", icon: <Leaf className="w-5 h-5" />, color: "#0E84B8" },
-  { value: "99.99%", label: "Ion Removal Rate", icon: <Shield className="w-5 h-5" />, color: "#E0B040" },
-];
+
+
 
 /* ─────────────────────── Why EDI Matters ─────────────────────── */
 
@@ -211,26 +206,6 @@ export default function EDISystemPage() {
               ))}
             </div>
 
-            {/* Mini stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex items-center gap-3 bg-white rounded-xl p-4 border border-[#E2E8F0]/60 shadow-sm"
-                >
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: `${stat.color}12`, color: stat.color }}
-                  >
-                    {stat.icon}
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold text-[#142A33]">{stat.value}</p>
-                    <p className="text-xs text-[#3C4D57]/70">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

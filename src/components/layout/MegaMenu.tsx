@@ -4,12 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Droplets,
-  Waves,
-  Recycle,
   ArrowRight,
   ChevronDown,
   Leaf,
-  Zap,
 } from "lucide-react";
 
 /* ─────────────────────── Types ─────────────────────── */
@@ -22,7 +19,6 @@ interface MegaMenuItem {
 
 interface MegaMenuColumn {
   title: string;
-  icon: React.ReactNode;
   items: MegaMenuItem[];
   highlight?: boolean;
 }
@@ -32,7 +28,6 @@ interface MegaMenuColumn {
 const solutionsData: MegaMenuColumn[] = [
   {
     title: "Water Treatment",
-    icon: <Droplets className="w-5 h-5" />,
     items: [
       {
         label: "Filtration Plant",
@@ -58,7 +53,6 @@ const solutionsData: MegaMenuColumn[] = [
   },
   {
     title: "Wastewater Treatment",
-    icon: <Waves className="w-5 h-5" />,
     highlight: true,
     items: [
       {
@@ -95,7 +89,6 @@ const solutionsData: MegaMenuColumn[] = [
   },
   {
     title: "Water Recycling",
-    icon: <Recycle className="w-5 h-5" />,
     items: [
       {
         label: "UF System",
@@ -131,7 +124,6 @@ const solutionsData: MegaMenuColumn[] = [
   },
   {
     title: "ZLD System",
-    icon: <Zap className="w-5 h-5" />,
     highlight: true,
     items: [
       {
@@ -238,15 +230,6 @@ export function DesktopSolutionsMenu({
                         column.highlight ? "border-[#20B0E0]" : "border-[#E2E8F0]"
                       }`}
                     >
-                      <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                          column.highlight
-                            ? "bg-[#20B0E0]/10 text-[#20B0E0]"
-                            : "bg-[#F1F5F9] text-[#3C4D57]"
-                        }`}
-                      >
-                        {column.icon}
-                      </div>
                       <h4 className="text-sm font-bold text-[#142A33] tracking-wide uppercase">
                         {column.title}
                       </h4>
@@ -401,17 +384,6 @@ function MobileAccordionMenu({
             className="w-full flex items-center justify-between py-3 text-left group"
           >
             <div className="flex items-center gap-3">
-              <div
-                className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                  column.highlight
-                    ? isBlue
-                      ? "bg-[#20B0E0]/10 text-[#20B0E0]"
-                      : "bg-[#8CC63F]/10 text-[#8CC63F]"
-                    : "bg-[#F1F5F9] text-[#3C4D57]"
-                }`}
-              >
-                {column.icon}
-              </div>
               <span
                 className={`text-sm font-semibold ${
                   expandedCol === column.title

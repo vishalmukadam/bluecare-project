@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Droplets, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   DesktopSolutionsMenu,
@@ -163,14 +164,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#home");
-              }}
-              className="flex items-center gap-3 group"
-            >
+            <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src="/bluecare-logo.png"
                 alt="BlueCare Systems"
@@ -179,7 +173,7 @@ export default function Header() {
                 className="h-12 w-auto object-contain"
                 priority
               />
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1">
@@ -309,14 +303,7 @@ export default function Header() {
           >
             {/* Mobile Header: Logo and Close Button */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#E2E8F0]/80">
-              <a
-                href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("#home");
-                }}
-                className="flex items-center gap-3"
-              >
+              <Link href="/" className="flex items-center gap-3">
                 <Image
                   src="/bluecare-logo.png"
                   alt="BlueCare Systems"
@@ -325,7 +312,7 @@ export default function Header() {
                   className="h-10 w-auto object-contain"
                   priority
                 />
-              </a>
+              </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[#142A33] hover:text-[#0E84B8] p-2 rounded-lg hover:bg-slate-100 transition-colors"

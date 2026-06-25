@@ -56,14 +56,9 @@ const scaleIn = {
   }),
 };
 
-/* ─────────────────────── Stats ─────────────────────── */
 
-const stats = [
-  { value: "70,000+", label: "mg/L Feed TDS Capacity", icon: <Gauge className="w-5 h-5" />, color: "#20B0E0" },
-  { value: "90", label: "bar Max Operating Pressure", icon: <Shield className="w-5 h-5" />, color: "#8CC63F" },
-  { value: "50+", label: "Systems Installed", icon: <Award className="w-5 h-5" />, color: "#0E84B8" },
-  { value: "98%", label: "Client Satisfaction", icon: <Droplets className="w-5 h-5" />, color: "#E0B040" },
-];
+
+
 
 /* ─────────────────────── Key Features ─────────────────────── */
 
@@ -255,26 +250,6 @@ export default function SecondStageIdtRoPage() {
                 further treatment stages or thermal systems.
               </p>
 
-              {/* Mini stats */}
-              <div className="grid grid-cols-2 gap-4">
-                {stats.slice(0, 2).map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="flex items-center gap-3 bg-white rounded-xl p-4 border border-[#E2E8F0]/60 shadow-sm"
-                  >
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: `${stat.color}12`, color: stat.color }}
-                    >
-                      {stat.icon}
-                    </div>
-                    <div>
-                      <p className="text-xl font-bold text-[#142A33]">{stat.value}</p>
-                      <p className="text-xs text-[#3C4D57]/70">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
           </div>
         </div>

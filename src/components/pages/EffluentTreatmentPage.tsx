@@ -54,14 +54,9 @@ const scaleIn = {
   }),
 };
 
-/* ─────────────────────── Stats ─────────────────────── */
 
-const stats = [
-  { value: "150+", label: "ETP Systems Delivered", icon: <Waves className="w-5 h-5" />, color: "#20B0E0" },
-  { value: "99.5%", label: "Compliance Rate", icon: <Shield className="w-5 h-5" />, color: "#8CC63F" },
-  { value: "50+", label: "Industries Served", icon: <Award className="w-5 h-5" />, color: "#0E84B8" },
-  { value: "98%", label: "Client Satisfaction", icon: <Users className="w-5 h-5" />, color: "#E0B040" },
-];
+
+
 
 /* ─────────────────────── Core Features ─────────────────────── */
 
@@ -182,8 +177,6 @@ export default function EffluentTreatmentPage() {
                 {/* Gradient overlay on image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D5C]/30 to-transparent" />
               </div>
-              {/* Decorative accent */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#20B0E0]/20 rounded-2xl -z-10" />
             </motion.div>
 
             {/* Right: Content */}
@@ -260,26 +253,6 @@ export default function EffluentTreatmentPage() {
                 </ul>
               </div>
 
-              {/* Mini stats */}
-              <div className="grid grid-cols-2 gap-4">
-                {stats.slice(0, 2).map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="flex items-center gap-3 bg-white rounded-xl p-4 border border-[#E2E8F0]/60 shadow-sm"
-                  >
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: `${stat.color}12`, color: stat.color }}
-                    >
-                      {stat.icon}
-                    </div>
-                    <div>
-                      <p className="text-xl font-bold text-[#142A33]">{stat.value}</p>
-                      <p className="text-xs text-[#3C4D57]/70">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
           </div>
         </div>
