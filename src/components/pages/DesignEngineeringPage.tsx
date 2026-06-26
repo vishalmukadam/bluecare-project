@@ -146,6 +146,8 @@ export default function DesignEngineeringPage() {
                   <img
                     src="/design-engineering-content.png"
                     alt="Engineering team working on water treatment plant design"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>

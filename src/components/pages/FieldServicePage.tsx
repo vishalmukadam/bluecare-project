@@ -163,6 +163,8 @@ export default function FieldServicePage() {
                   <img
                     src="/field-service-content.png"
                     alt="Field service technicians working on water treatment plant systems"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>

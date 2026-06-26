@@ -176,6 +176,8 @@ export default function MeeSystemPage() {
                   <img
                     src="/mee-system-content.png"
                     alt="Multi Effect Evaporator system for industrial wastewater concentration"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>

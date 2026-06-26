@@ -160,7 +160,9 @@ export default function RetrofitsPage() {
                   <img
                     src="/retrofits-content.png"
                     alt="Retrofit and plant upgrade work by BlueCare"
-                    className="w-full h-auto object-cover"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-[400px] object-cover"
                   />
                 </picture>
                 {/* Gradient overlay on image */}
@@ -216,7 +218,7 @@ export default function RetrofitsPage() {
               </p>
 
               {/* Service Checklist */}
-              <div className="space-y-3 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {serviceChecklist.map((item, i) => (
                   <motion.div
                     key={item.text}
@@ -225,7 +227,7 @@ export default function RetrofitsPage() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                     custom={i + 2}
-                    className="flex items-start gap-3 bg-white rounded-xl p-3 border border-[#E2E8F0]/60 shadow-sm"
+                    className="flex items-start gap-3 bg-white rounded-xl p-4 border border-[#E2E8F0]/60 shadow-sm h-full"
                   >
                     <CheckCircle
                       className="w-5 h-5 mt-0.5 shrink-0"
@@ -233,7 +235,7 @@ export default function RetrofitsPage() {
                     />
                     <div>
                       <p className="font-semibold text-[#142A33]">{item.text}</p>
-                      <p className="text-sm text-[#3C4D57]/70">{item.desc}</p>
+                      <p className="text-sm text-[#3C4D57]/70 mt-0.5 leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}

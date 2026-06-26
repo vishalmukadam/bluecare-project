@@ -95,7 +95,7 @@ export default function HeroSection() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/bluecare-logo.png"
+        poster="/hero-video-poster.jpg"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>

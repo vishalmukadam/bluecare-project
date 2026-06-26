@@ -176,7 +176,9 @@ export default function ZldSystemPage() {
                   <img
                     src="/zld-system-content.png"
                     alt="Zero Liquid Discharge system for water recovery and environmental compliance"
-                    className="w-full h-auto object-cover"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-[400px] object-cover"
                   />
                 </picture>
                 {/* Gradient overlay on image */}

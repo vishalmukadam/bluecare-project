@@ -123,10 +123,11 @@ const rightCards = [
   },
   {
     icon: MapPin,
-    title: "Pan-India Presence",
+    title: "Global & Domestic Presence",
     description:
-      "From metropolitan hubs to remote industrial zones, our nationwide service network ensures rapid response, local expertise, and seamless project execution.",
+      "From major international hubs like Abu Dhabi to India's key industrial regions, our wide network ensures rapid support and seamless project delivery.",
     color: "#8CC63F",
+    locations: ["Abu Dhabi", "Mumbai", "Rajasthan", "Bangalore", "Hyderabad"],
   },
 ];
 
@@ -438,6 +439,19 @@ export default function WhyChooseUsSection() {
                       <p className="text-[#3C4D57] text-sm leading-relaxed mb-3">
                         {card.description}
                       </p>
+
+                      {"locations" in card && card.locations && (
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          {card.locations.map((loc) => (
+                            <span
+                              key={loc}
+                              className="text-[11px] px-2.5 py-0.5 bg-[#8CC63F]/10 text-[#5A9024] rounded-full font-semibold"
+                            >
+                              {loc}
+                            </span>
+                          ))}
+                        </div>
+                      )}
 
                       {/* Learn more → slide-in link */}
                       <div className="overflow-hidden">

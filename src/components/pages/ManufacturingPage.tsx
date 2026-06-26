@@ -185,6 +185,8 @@ export default function ManufacturingPage() {
                   <img
                     src="/manufacturing-content.png"
                     alt="BlueCare manufacturing facility - fabrication and assembly of water treatment systems"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>

@@ -31,18 +31,18 @@ type ClientLogo = {
 const clientLogos: ClientLogo[] = [
   { name: "Balaji Amines", sector: "Chemical", logo: "/clients/balaji.svg", aspect: "wide" },
   { name: "Roquette", sector: "Food & Beverage", logo: "/clients/roquette.avif", aspect: "wide" },
-  { name: "Bosch", sector: "Power & Energy", logo: "/clients/bosch.png", aspect: "wide", logoScale: 1.4 },
-  { name: "Cipla", sector: "Pharmaceutical", logo: "/clients/cipla.avif", aspect: "wide" },
+  { name: "Bosch", sector: "Power & Energy", logo: "/clients/bosch.png", aspect: "wide", logoScale: 1.8 },
+  { name: "Cipla", sector: "Pharmaceutical", logo: "/clients/cipla.avif", aspect: "wide", logoScale: 1.5 },
   { name: "Dr. Reddy's", sector: "Pharmaceutical", logo: "/clients/dr-reddys.webp", aspect: "wide" },
-  { name: "AB Mauri", sector: "Food & Beverage", logo: "/clients/ab-mauri.avif", aspect: "wide" },
+  { name: "AB Mauri", sector: "Food & Beverage", logo: "/clients/ab-mauri.avif", aspect: "wide", logoScale: 1.4 },
   { name: "Jayshree", sector: "Chemical", logo: "/clients/jayshree.webp", aspect: "wide" },
   { name: "JK Tyre", sector: "Petrochemical", logo: "/clients/jk-tyres.png", aspect: "wide" },
   { name: "Mylan", sector: "Pharmaceutical", logo: "/clients/mylan.avif", aspect: "wide" },
-  { name: "Goodrich", sector: "Petrochemical", logo: "/clients/goodrich.avif", aspect: "wide" },
+  { name: "Goodrich", sector: "Petrochemical", logo: "/clients/goodrich.avif", aspect: "wide", logoScale: 1.4 },
   { name: "Teva", sector: "Pharmaceutical", logo: "/clients/teva-logo.svg", aspect: "wide", logoScale: 0.65 },
   { name: "Virchows", sector: "Pharmaceutical", logo: "/clients/virchows.png", aspect: "wide", logoScale: 0.65 },
   { name: "Hikal", sector: "Pharmaceutical", logo: "/clients/hikal.avif", aspect: "wide" },
-  { name: "Ratan", sector: "Chemical", logo: "/clients/ratan.png", aspect: "wide", logoScale: 1.4 },
+  { name: "Ratan", sector: "Chemical", logo: "/clients/ratan.png", aspect: "wide", logoScale: 1.8 },
   { name: "Bain", sector: "Power & Energy", logo: "/clients/bain.webp", aspect: "wide", lightLogo: true },
 ];
 

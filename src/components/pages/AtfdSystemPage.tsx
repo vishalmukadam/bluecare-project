@@ -187,6 +187,8 @@ export default function AtfdSystemPage() {
                   <img
                     src="/atfd-system-content.png"
                     alt="Agitated Thin Film Dryer system for ZLD compliance"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>

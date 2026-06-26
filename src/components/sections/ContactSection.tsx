@@ -264,7 +264,7 @@ export default function ContactSection() {
                   <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#E0F5B5] rounded-full animate-pulse" />
                 </div>
                 <p className="text-white font-medium drop-shadow-sm">BlueCare Systems Pvt. Ltd.</p>
-                <p className="text-white/85 text-sm drop-shadow-sm">Industrial Area, India</p>
+                <p className="text-white/85 text-sm drop-shadow-sm max-w-[250px]">Plot No: H-378/378-AB, Growth Centre, Riico Industrial Area, Hamirgarh-311025, Dist-Bhilwara, RAJASTHAN</p>
               </div>
             </motion.div>
           </motion.div>

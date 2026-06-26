@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import PresenceStrip from "../sections/PresenceStrip";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -43,7 +44,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/bluecare-system-pvt-ltd", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -283,9 +284,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 +91 99870 88708
               </a>
-              <div className="flex items-center gap-3 text-[#3C4D57] text-sm">
-                <MapPin className="w-4 h-4 shrink-0" />
-                <span>Industrial Area, India</span>
+              <div className="flex items-start gap-3 text-[#3C4D57] text-sm">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                <span className="max-w-[320px]">Plot No: H-378/378-AB, Growth Centre, Riico Industrial Area, Hamirgarh-311025, Dist-Bhilwara, RAJASTHAN</span>
               </div>
             </div>
           </div>
@@ -368,6 +369,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Regional/Operational Presence Strip */}
+      <PresenceStrip />
 
       {/* ── Bottom Bar ────────────────────────────────────────── */}
       <div className="relative border-t border-[#D4D4D4]/80">

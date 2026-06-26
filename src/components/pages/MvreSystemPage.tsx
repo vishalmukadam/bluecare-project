@@ -184,6 +184,8 @@ export default function MvreSystemPage() {
                   <img
                     src="/mvre-system-content.png"
                     alt="Mechanical Vapor Recompression Evaporator system for ZLD applications"
+                    width={1024}
+                    height={1024}
                     className="w-full h-auto object-cover"
                   />
                 </picture>
