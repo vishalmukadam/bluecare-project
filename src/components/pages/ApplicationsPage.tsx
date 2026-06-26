@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -25,6 +26,8 @@ import {
   Trash2,
   Waves,
   FlaskConical,
+  X,
+  ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -151,6 +154,21 @@ const industries = [
 /* ─────────────────────── Component ─────────────────────── */
 
 export default function ApplicationsPage() {
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (activePhotoIndex === null) return;
+
+    const interval = setInterval(() => {
+      setActivePhotoIndex((prevIndex) => {
+        if (prevIndex === null) return 0;
+        return (prevIndex + 1) % industries.length;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [activePhotoIndex]);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFE]">
       {/* ─── Minimal Hero Banner ─── */}
@@ -250,7 +268,10 @@ export default function ApplicationsPage() {
                 className="group bg-white rounded-2xl overflow-hidden border border-[#E2E8F0]/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div 
+                  className="relative h-48 overflow-hidden cursor-pointer"
+                  onClick={() => setActivePhotoIndex(i)}
+                >
                   <picture className="w-full h-full">
                     <source srcSet={industry.image.replace(/\.(png|avif|webp)$/, '.avif')} type="image/avif" />
                     <source srcSet={industry.image.replace(/\.(png|avif|webp)$/, '.webp')} type="image/webp" />
@@ -379,6 +400,101 @@ export default function ApplicationsPage() {
           </Link>
         </div>
       </div>
+
+      {/* Lightbox / Slider Modal */}
+      <AnimatePresence>
+        {activePhotoIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-6 md:p-10 select-none"
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setActivePhotoIndex(null)}
+              className="absolute top-6 right-6 z-50 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all duration-300 cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Left Arrow */}
+            <button
+              onClick={() => {
+                setActivePhotoIndex((prev) => (prev !== null ? (prev - 1 + industries.length) % industries.length : 0));
+              }}
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 cursor-pointer hidden md:block"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => {
+                setActivePhotoIndex((prev) => (prev !== null ? (prev + 1) % industries.length : 0));
+              }}
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 cursor-pointer hidden md:block"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Main content container */}
+            <div className="relative max-w-4xl w-full flex flex-col items-center gap-6">
+              {/* Slider frame */}
+              <div className="relative w-full aspect-video md:aspect-[16/10] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+                {/* Click on image advances to next */}
+                <div 
+                  className="w-full h-full relative cursor-pointer"
+                  onClick={() => {
+                    setActivePhotoIndex((prev) => (prev !== null ? (prev + 1) % industries.length : 0));
+                  }}
+                >
+                  <motion.img
+                    key={activePhotoIndex}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    src={industries[activePhotoIndex].image}
+                    alt={industries[activePhotoIndex].title}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Text overlay - elegant shadow gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-6 md:p-8">
+                    <h3 className="text-white text-xl md:text-3xl font-bold mb-2">
+                      {industries[activePhotoIndex].title}
+                    </h3>
+                    <p className="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed">
+                      {industries[activePhotoIndex].description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dots navigation indicator */}
+              <div className="flex flex-wrap items-center justify-center gap-2 max-w-full">
+                {industries.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActivePhotoIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === activePhotoIndex ? "w-6 bg-[#20B0E0]" : "w-2 bg-white/30 hover:bg-white/50"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+              
+              {/* Autoplay indicator badge */}
+              <div className="text-xs text-white/40 flex items-center gap-1.5 mt-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span>Autoplay active (3s)</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
