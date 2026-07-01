@@ -30,16 +30,21 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    detail: "+91 99870 88708",
     subDetail: "Mon-Sat, 9am-6pm IST",
     accentColor: "#20B0E0",
+    links: [
+      { text: "+91 9699878877", href: "tel:+919699878877" }
+    ],
   },
   {
     icon: Mail,
     title: "Email Us",
-    detail: "bluecare@bluecare.in",
     subDetail: "We respond within 24 hours",
     accentColor: "#8CC63F",
+    links: [
+      { text: "bluecare@bluecare.in", href: "mailto:bluecare@bluecare.in" },
+      { text: "sales@bluecare.in", href: "mailto:sales@bluecare.in" }
+    ],
   },
 ];
 
@@ -201,9 +206,15 @@ export default function ContactSection() {
                   <h4 className="text-[#142A33] font-semibold mb-1">
                     {info.title}
                   </h4>
-                  <p className="text-[#0E84B8] font-medium text-sm">
-                    {info.detail}
-                  </p>
+                  {info.links.map((link) => (
+                    <a
+                      key={link.text}
+                      href={link.href}
+                      className="text-[#0E84B8] hover:text-[#0b6e9a] hover:underline font-medium text-sm block transition-colors"
+                    >
+                      {link.text}
+                    </a>
+                  ))}
                   <p className="text-[#3C4D57] text-xs mt-0.5">
                     {info.subDetail}
                   </p>
@@ -370,7 +381,7 @@ export default function ContactSection() {
                         id="contact-phone"
                         name="phone"
                         type="tel"
-                        placeholder="+91 99870 88708"
+                        placeholder="+91 9699878877"
                         className="bg-white border-[#E2E8F0] focus:border-[#20B0E0] focus:ring-[#20B0E0]/20"
                       />
                     </div>

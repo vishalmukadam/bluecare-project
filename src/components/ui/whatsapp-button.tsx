@@ -44,7 +44,7 @@ export default function WhatsAppButton() {
             {/* Action */}
             <div className="px-4 pb-4">
               <a
-                href="https://wa.me/919987088708?text=Hi%20BlueCare%2C%20I%20would%20like%20to%20know%20more%20about%20your%20water%20treatment%20solutions."
+                href="https://wa.me/919699878877?text=Hi%20BlueCare%2C%20I%20would%20like%20to%20know%20more%20about%20your%20water%20treatment%20solutions."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20BD5A] text-white py-3 rounded-lg font-medium text-sm transition-colors"

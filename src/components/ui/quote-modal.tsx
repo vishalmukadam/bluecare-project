@@ -283,7 +283,7 @@ export default function QuoteModal() {
                     id="quote-phone"
                     name="phone"
                     type="tel"
-                    placeholder="+91 99870 88708"
+                    placeholder="+91 9699878877"
                     value={formData.phone}
                     onChange={handleChange}
                   />

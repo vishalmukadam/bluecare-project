@@ -278,11 +278,18 @@ export default function Footer() {
                 bluecare@bluecare.in
               </a>
               <a
-                href="tel:+919987088708"
+                href="mailto:sales@bluecare.in"
+                className="flex items-center gap-3 text-[#3C4D57] hover:text-[#0E84B8] transition-colors text-sm group"
+              >
+                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                sales@bluecare.in
+              </a>
+              <a
+                href="tel:+919699878877"
                 className="flex items-center gap-3 text-[#3C4D57] hover:text-[#0E84B8] transition-colors text-sm group"
               >
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                +91 99870 88708
+                +91 9699878877
               </a>
               <div className="flex items-start gap-3 text-[#3C4D57] text-sm">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />

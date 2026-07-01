@@ -276,7 +276,7 @@ export default function DesalinationPage() {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <a href="tel:+919987088708">
+                <a href="tel:+919699878877">
                   <Button
                     variant="outline"
                     className="border-white/25 text-white hover:bg-white/10 px-8 py-3.5 rounded-lg font-semibold text-lg transition-all duration-200"
@@ -294,8 +294,12 @@ export default function DesalinationPage() {
                   <span>bluecare@bluecare.in</span>
                 </div>
                 <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <span>sales@bluecare.in</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91 99870 88708</span>
+                  <span>+91 9699878877</span>
                 </div>
               </div>
             </div>
