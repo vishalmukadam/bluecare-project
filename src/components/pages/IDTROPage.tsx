@@ -127,7 +127,7 @@ export default function IDTROPage() {
             custom={1}
             className="text-4xl md:text-5xl font-bold text-[#142A33] leading-tight"
           >
-            Bluecare <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20B0E0] to-[#8CC63F]">IDT</span>{" "}Disc Type RO System
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20B0E0] to-[#8CC63F]">Bluecare</span> IDT Disc Type RO System
           </motion.h1>
         </div>
 
