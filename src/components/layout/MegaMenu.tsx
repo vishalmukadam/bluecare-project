@@ -45,6 +45,11 @@ const solutionsData: MegaMenuColumn[] = [
         description: "Reverse osmosis purification",
       },
       {
+        label: "Desalination System",
+        href: "/desalination",
+        description: "Seawater & brackish water desalination",
+      },
+      {
         label: "EDI System",
         href: "/edi-system",
         description: "Electrodeionization for ultra-pure water",
@@ -114,11 +119,6 @@ const solutionsData: MegaMenuColumn[] = [
         label: "Hybrid IDT RO System",
         href: "/hybrid-idt-ro",
         description: "Combined SPRO + IDT RO hybrid process",
-      },
-      {
-        label: "Desalination System",
-        href: "/desalination",
-        description: "Seawater & brackish water desalination",
       },
     ],
   },
