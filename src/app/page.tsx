@@ -10,7 +10,6 @@ import ClientsSection from "@/components/sections/ClientsSection";
 import CTASection from "@/components/sections/CTASection";
 import ContactSection from "@/components/sections/ContactSection";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
-import QuoteModal from "@/components/ui/quote-modal";
 import ScrollProgress from "@/components/ui/scroll-progress";
 import StatsCounterStrip from "@/components/sections/StatsCounterStrip";
 import GreenPromiseSection from "@/components/sections/GreenPromiseSection";
@@ -45,9 +44,6 @@ export default function Home() {
 
       {/* Floating WhatsApp button */}
       <WhatsAppButton />
-
-      {/* Floating Quote Request modal */}
-      <QuoteModal />
     </div>
   );
 }

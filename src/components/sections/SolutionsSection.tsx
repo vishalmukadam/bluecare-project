@@ -109,7 +109,7 @@ const solutions: Solution[] = [
   },
 ];
 
-const AUTOPLAY_MS = 3000;
+const AUTOPLAY_MS = 5000;
 const TRANSITION_MS = 600;
 
 export default function SolutionsSection() {
@@ -119,15 +119,17 @@ export default function SolutionsSection() {
   const total = solutions.length;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
-  // Autoplay — advance every 3s, pause on hover
+  // Autoplay — normal advance every 5s, pause on hover for 6s before moving next
   useEffect(() => {
     if (paused) return;
+    const intervalTime = hovered ? 6000 : AUTOPLAY_MS;
     const id = setInterval(() => {
       setIndex((prev) => (prev + 1) % total);
-    }, AUTOPLAY_MS);
+    }, intervalTime);
     return () => clearInterval(id);
-  }, [paused, total]);
+  }, [paused, hovered, total]);
 
   const goTo = useCallback(
     (i: number) => {
@@ -213,7 +215,11 @@ export default function SolutionsSection() {
           className="relative"
         >
           {/* Carousel viewport */}
-          <div className="overflow-hidden rounded-2xl">
+          <div
+            className="overflow-hidden rounded-2xl"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
             <div
               className="flex"
               style={{
@@ -308,7 +314,11 @@ export default function SolutionsSection() {
               }`}
             />
             <span>
-              {paused ? "Autoplay paused" : `Auto-advances every ${AUTOPLAY_MS / 1000}s`}
+              {paused
+                ? "Autoplay paused"
+                : `Auto-advances every ${hovered ? 6 : AUTOPLAY_MS / 1000}s${
+                    hovered ? " (hover pause)" : ""
+                  }`}
             </span>
           </div>
         </motion.div>
