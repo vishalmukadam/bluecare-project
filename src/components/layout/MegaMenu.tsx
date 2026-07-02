@@ -71,6 +71,11 @@ const solutionsData: MegaMenuColumn[] = [
         description: "Chemical & biological ETP solutions",
       },
       {
+        label: "Bluecare Aspiratory System",
+        href: "/aspiratory-system",
+        description: "Aeration & gas scrubbing",
+      },
+      {
         label: "Ceramic MBR System",
         href: "/ceramic-mbr",
         description: "Advanced membrane bioreactor",
@@ -84,11 +89,6 @@ const solutionsData: MegaMenuColumn[] = [
         label: "Paddle Dryer System",
         href: "/paddle-dryer",
         description: "Efficient sludge drying technology",
-      },
-      {
-        label: "Bluecare Aspiratory System",
-        href: "/aspiratory-system",
-        description: "Aeration & gas scrubbing",
       },
     ],
   },
