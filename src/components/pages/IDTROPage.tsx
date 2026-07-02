@@ -62,7 +62,7 @@ const scaleIn = {
 
 const keyFeatures = [
   {
-    title: "Tube Membrane Modules",
+    title: "IDT Membrane Modules",
     description: "Open-channel flow with high resistance to fouling, scaling, and plugging.",
     color: "#20B0E0",
   },
