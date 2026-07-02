@@ -31,6 +31,7 @@ type ClientLogo = {
 };
 
 const clientLogos: ClientLogo[] = [
+  { name: "Kasyap", sector: "Chemical", logo: "/clients/kasyap.webp", avifLogo: "/clients/kasyap.avif", webpLogo: "/clients/kasyap.webp", aspect: "wide" },
   { name: "Balaji Amines", sector: "Chemical", logo: "/clients/balaji.svg", aspect: "wide" },
   { name: "Roquette", sector: "Food & Beverage", logo: "/clients/roquette.avif", aspect: "wide" },
   { name: "Bosch", sector: "Power & Energy", logo: "/clients/bosch.png", aspect: "wide", logoScale: 1.8 },
@@ -48,7 +49,6 @@ const clientLogos: ClientLogo[] = [
   { name: "Bain", sector: "Power & Energy", logo: "/clients/bain.webp", aspect: "wide", lightLogo: true },
   { name: "JSW", sector: "Power & Energy", logo: "/clients/jsw.webp", avifLogo: "/clients/jsw.avif", webpLogo: "/clients/jsw.webp", aspect: "wide" },
   { name: "BEP", sector: "Chemical", logo: "/clients/bep.webp", avifLogo: "/clients/bep.avif", webpLogo: "/clients/bep.webp", aspect: "wide" },
-  { name: "Kasyap", sector: "Chemical", logo: "/clients/kasyap.webp", avifLogo: "/clients/kasyap.avif", webpLogo: "/clients/kasyap.webp", aspect: "wide" },
 ];
 
 /* Reversed copy of clientLogos for the second marquee row (right to left) */
