@@ -140,17 +140,42 @@ export default function DesalinationPage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8CC63F]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Left: Content - Text and paragraphs */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Image */}
             <motion.div
               variants={fadeInLeft}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               custom={0}
-              className="space-y-6"
+              className="relative"
             >
-              <div className="inline-flex items-center gap-2 bg-[#20B0E0]/10 rounded-full px-4 py-1.5 mb-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <picture>
+                  <source srcSet="/desalination-system.avif" type="image/avif" />
+                  <source srcSet="/desalination-system.webp" type="image/webp" />
+                  <img
+                    src="/desalination-content.png"
+                    alt="Desalination system for seawater and brackish water treatment"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-auto object-cover"
+                  />
+                </picture>
+                {/* Gradient overlay on image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D5C]/30 to-transparent" />
+              </div>
+            </motion.div>
+
+            {/* Right: Content */}
+            <motion.div
+              variants={fadeInRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={1}
+            >
+              <div className="inline-flex items-center gap-2 bg-[#20B0E0]/10 rounded-full px-4 py-1.5 mb-5">
                 <Recycle className="w-4 h-4 text-[#20B0E0]" />
                 <span className="text-[#0E84B8] text-sm font-semibold">About Our Desalination</span>
               </div>
@@ -174,40 +199,9 @@ export default function DesalinationPage() {
                 <strong className="text-[#142A33]">energy recovery systems</strong> enhance efficiency
                 and reduce operating costs. Engineered for rugged environments and continuous operation.
               </p>
-            </motion.div>
-
-            {/* Right: Images and Cards stack */}
-            <motion.div
-              variants={fadeInRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={1}
-              className="space-y-8"
-            >
-              {/* Three-Image Grid */}
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  { base: "/solutions/desalination-plant-1", alt: "Desalination Plant 1" },
-                  { base: "/solutions/desalination-plant-2", alt: "Desalination Plant 2" },
-                  { base: "/solutions/desalination-plant-3", alt: "Desalination Plant 3" },
-                ].map((img, idx) => (
-                  <div key={img.base} className="relative rounded-xl overflow-hidden shadow-md aspect-[4/3] group border border-[#E2E8F0] bg-white">
-                    <picture>
-                      <source srcSet={`${img.base}.avif`} type="image/avif" />
-                      <source srcSet={`${img.base}.webp`} type="image/webp" />
-                      <img
-                        src={`${img.base}.webp`}
-                        alt={img.alt}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </picture>
-                  </div>
-                ))}
-              </div>
 
               {/* Key Features checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                 {keyFeatures.map((feature, i) => (
                   <motion.div
                     key={feature.title}
@@ -229,6 +223,8 @@ export default function DesalinationPage() {
                   </motion.div>
                 ))}
               </div>
+
+
             </motion.div>
           </div>
         </div>
