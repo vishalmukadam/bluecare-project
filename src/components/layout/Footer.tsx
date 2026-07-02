@@ -291,6 +291,13 @@ export default function Footer() {
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 +91 9699878877
               </a>
+              <a
+                href="tel:+918696753800"
+                className="flex items-center gap-3 text-[#3C4D57] hover:text-[#0E84B8] transition-colors text-sm group"
+              >
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                +91 8696753800
+              </a>
               <div className="flex items-start gap-3 text-[#3C4D57] text-sm">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span className="max-w-[320px]">Plot No: H-378/378-AB, Growth Centre, Riico Industrial Area, Hamirgarh-311025, Dist-Bhilwara, RAJASTHAN</span>

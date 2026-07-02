@@ -33,7 +33,8 @@ const contactInfo = [
     subDetail: "Mon-Sat, 9am-6pm IST",
     accentColor: "#20B0E0",
     links: [
-      { text: "+91 9699878877", href: "tel:+919699878877" }
+      { text: "+91 9699878877", href: "tel:+919699878877" },
+      { text: "+91 8696753800", href: "tel:+918696753800" }
     ],
   },
   {
