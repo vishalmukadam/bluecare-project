@@ -300,7 +300,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-3 text-[#3C4D57] text-sm">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
-                <span className="max-w-[320px]">Plot No: H-378/378-AB, Growth Centre, Riico Industrial Area, Hamirgarh-311025, Dist-Bhilwara, RAJASTHAN</span>
+                <span className="max-w-[320px]">Plot No: H1-378,378-A&B, 381-B, Growth Centre, RIICO Industrial Area, Hamirgarh-311025, Dist-Bhilwara, RAJASTHAN</span>
               </div>
             </div>
           </div>
