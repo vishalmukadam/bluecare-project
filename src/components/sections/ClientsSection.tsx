@@ -20,6 +20,8 @@ type ClientLogo = {
   name: string;
   sector: string;
   logo: string;
+  avifLogo?: string;
+  webpLogo?: string;
   /** logo aspect hint so layout is stable while loading */
   aspect?: "wide" | "square";
   /** set true for white/light-coloured logos that need a tinted backdrop to be visible */
@@ -44,6 +46,9 @@ const clientLogos: ClientLogo[] = [
   { name: "Hikal", sector: "Pharmaceutical", logo: "/clients/hikal.avif", aspect: "wide" },
   { name: "Ratan", sector: "Chemical", logo: "/clients/ratan.png", aspect: "wide", logoScale: 1.8 },
   { name: "Bain", sector: "Power & Energy", logo: "/clients/bain.webp", aspect: "wide", lightLogo: true },
+  { name: "JSW", sector: "Power & Energy", logo: "/clients/jsw.webp", avifLogo: "/clients/jsw.avif", webpLogo: "/clients/jsw.webp", aspect: "wide" },
+  { name: "BEP", sector: "Chemical", logo: "/clients/bep.webp", avifLogo: "/clients/bep.avif", webpLogo: "/clients/bep.webp", aspect: "wide" },
+  { name: "Kasyap", sector: "Chemical", logo: "/clients/kasyap.webp", avifLogo: "/clients/kasyap.avif", webpLogo: "/clients/kasyap.webp", aspect: "wide" },
 ];
 
 /* Reversed copy of clientLogos for the second marquee row (right to left) */
@@ -86,13 +91,27 @@ function LogoCard({ client }: { client: ClientLogo }) {
           backgroundColor: client.lightLogo ? "#F4F7FA" : "transparent",
         }}
       >
-        <img
-          src={client.logo}
-          alt={`${client.name} logo`}
-          className="max-h-full max-w-full object-contain transition-all duration-500 grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100"
-          style={{ transform: `scale(${logoScale})` }}
-          loading="lazy"
-        />
+        {client.avifLogo && client.webpLogo ? (
+          <picture className="flex items-center justify-center max-h-full max-w-full">
+            <source srcSet={client.avifLogo} type="image/avif" />
+            <source srcSet={client.webpLogo} type="image/webp" />
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="max-h-full max-w-full object-contain transition-all duration-500 grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100"
+              style={{ transform: `scale(${logoScale})` }}
+              loading="lazy"
+            />
+          </picture>
+        ) : (
+          <img
+            src={client.logo}
+            alt={`${client.name} logo`}
+            className="max-h-full max-w-full object-contain transition-all duration-500 grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100"
+            style={{ transform: `scale(${logoScale})` }}
+            loading="lazy"
+          />
+        )}
       </div>
 
       {/* Company name */}
@@ -207,13 +226,13 @@ export default function ClientsSection() {
       {/* ── Marquee keyframe animations (global) ── */}
       <style dangerouslySetInnerHTML={{ __html: `
         .ticker-scroll {
-          animation: tickerScroll 65s linear infinite;
+          animation: tickerScroll 30s linear infinite;
         }
         .ticker-scroll:hover {
           animation-play-state: paused;
         }
         .ticker-scroll-reverse {
-          animation: tickerScrollReverse 75s linear infinite;
+          animation: tickerScrollReverse 35s linear infinite;
         }
         .ticker-scroll-reverse:hover {
           animation-play-state: paused;
