@@ -172,73 +172,7 @@ export default function Footer() {
         }}
       />
 
-      {/* ── 6. Newsletter Section with gradient bg ─────────────── */}
-      <div className="relative border-b border-[#D4D4D4]/80">
-        {/* Gradient background for newsletter */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(32,176,224,0.06) 0%, rgba(140,198,63,0.05) 50%, rgba(14,132,184,0.04) 100%)",
-          }}
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left max-w-lg">
-              <h3 className="text-2xl font-bold text-[#142A33] mb-2">
-                Stay Updated with{" "}
-                <span className="text-[#5A9024]">BlueCare</span>
-              </h3>
-              <p className="text-[#3C4D57] text-sm leading-relaxed">
-                Subscribe to our newsletter for the latest insights on water
-                treatment technologies, sustainability practices, and industry
-                updates.
-              </p>
-            </div>
-            <div className="w-full lg:w-auto lg:min-w-[420px]">
-              {subscribed ? (
-                <div className="flex items-center gap-3 bg-white border border-[#8CC63F]/40 rounded-xl px-5 py-4 shadow-sm">
-                  <CheckCircle className="w-5 h-5 text-[#5A9024] shrink-0" />
-                  <div>
-                    <p className="text-[#142A33] font-medium text-sm">
-                      Successfully subscribed!
-                    </p>
-                    <p className="text-[#3C4D57] text-xs">
-                      You&apos;ll receive our next newsletter.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex gap-3">
-                  <Input
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-white border-slate-300 text-[#142A33] placeholder-slate-400 focus:border-[#20B0E0] focus:ring-[#20B0E0]/20 h-12"
-                  />
-                  <Button
-                    type="submit"
-                    disabled={subscribing}
-                    className="bg-[#0E84B8] hover:bg-[#0B6E9A] text-white px-6 h-12 rounded-lg font-medium transition-all duration-200 shrink-0"
-                  >
-                    {subscribing ? (
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2" />
-                        Subscribe
-                      </>
-                    )}
-                  </Button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* ── Main Footer ───────────────────────────────────────── */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
