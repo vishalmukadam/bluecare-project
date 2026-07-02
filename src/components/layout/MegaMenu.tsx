@@ -106,7 +106,7 @@ const solutionsData: MegaMenuColumn[] = [
         description: "High-recovery multistage reverse osmosis",
       },
       {
-        label: "IDT Disc Type RO System",
+        label: "Bluecare IDT Disc Type RO System",
         href: "/idt-ro",
         description: "Innovative disc-tube RO technology",
       },

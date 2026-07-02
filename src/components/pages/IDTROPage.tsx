@@ -62,7 +62,7 @@ const scaleIn = {
 
 const keyFeatures = [
   {
-    title: "Disc-Tube Membrane Modules",
+    title: "Tube Membrane Modules",
     description: "Open-channel flow with high resistance to fouling, scaling, and plugging.",
     color: "#20B0E0",
   },
@@ -117,7 +117,7 @@ export default function IDTROPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-[#3C4D57]/60">Water Recycling</span>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-[#20B0E0] font-medium">IDT Disc Type RO System</span>
+            <span className="text-[#20B0E0] font-medium">Bluecare IDT Disc Type RO System</span>
           </motion.nav>
 
           <motion.h1
@@ -127,7 +127,7 @@ export default function IDTROPage() {
             custom={1}
             className="text-4xl md:text-5xl font-bold text-[#142A33] leading-tight"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20B0E0] to-[#8CC63F]">IDT</span>{" "}Disc Type RO System
+            Bluecare <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20B0E0] to-[#8CC63F]">IDT</span>{" "}Disc Type RO System
           </motion.h1>
         </div>
 
@@ -165,7 +165,7 @@ export default function IDTROPage() {
                   <source srcSet="/idt-ro-content.webp" type="image/webp" />
                   <img
                     src="/idt-ro-content.png"
-                    alt="IDT Disc Type RO system for high-TDS wastewater treatment"
+                    alt="Bluecare IDT Disc Type RO system for high-TDS wastewater treatment"
                     width={1024}
                     height={1024}
                     className="w-full h-auto object-cover"
@@ -197,7 +197,7 @@ export default function IDTROPage() {
               </h2>
 
               <p className="text-[#3C4D57] text-lg leading-relaxed mb-5">
-                IDT RO uses flat-sheet membranes assembled in an open-channel disc configuration,
+                Bluecare IDT RO uses flat-sheet membranes assembled in an open-channel disc configuration,
                 creating high cross-flow velocity and turbulence. This design allows the system to
                 handle high salinity, high COD, oil &amp; grease, and suspended solids more
                 effectively than conventional RO.
