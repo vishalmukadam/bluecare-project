@@ -3,7 +3,7 @@
 import { MapPin } from "lucide-react";
 
 export default function PresenceStrip() {
-  const locations = ["Abu Dhabi", "Mumbai", "Nagpur", "Rajasthan", "Bangalore", "Hyderabad"];
+  const locations = ["Abu Dhabi", "Mumbai", "Nagpur", "Kolkata", "Bangalore", "Hyderabad"];
 
   return (
     <div className="w-full bg-gradient-to-r from-[#20B0E0]/8 via-[#F8FAFE] to-[#8CC63F]/8 py-2 border-y border-slate-200/60 relative overflow-hidden z-10">

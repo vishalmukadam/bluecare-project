@@ -127,7 +127,7 @@ const rightCards = [
     description:
       "From major international hubs like Abu Dhabi to India's key industrial regions, our wide network ensures rapid support and seamless project delivery.",
     color: "#8CC63F",
-    locations: ["Abu Dhabi", "Mumbai", "Nagpur", "Rajasthan", "Bangalore", "Hyderabad"],
+    locations: ["Abu Dhabi", "Mumbai", "Nagpur", "Kolkata", "Bangalore", "Hyderabad"],
   },
 ];
 
