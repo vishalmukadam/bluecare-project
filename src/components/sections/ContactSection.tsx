@@ -382,7 +382,7 @@ export default function ContactSection() {
                         id="contact-phone"
                         name="phone"
                         type="tel"
-                        placeholder="+91 9699878877"
+                        placeholder="+91 Your number"
                         className="bg-white border-[#E2E8F0] focus:border-[#20B0E0] focus:ring-[#20B0E0]/20"
                       />
                     </div>
